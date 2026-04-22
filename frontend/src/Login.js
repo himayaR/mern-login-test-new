@@ -8,7 +8,7 @@ function Login() {
 
   const login = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://mern-login-test-new-production.up.railway.app/api/auth/login", {
         username,
         password,
         email
@@ -20,7 +20,7 @@ function Login() {
   };
 
   const register = async () => {
-    await axios.post("http://localhost:5000/api/auth/register", {
+    await axios.post("https://mern-login-test-new-production.up.railway.app/api/auth/register", {
       username,
       password,
       email
@@ -33,7 +33,7 @@ function Login() {
       <h2>Login</h2>
       <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
       <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <button onClick={login}>Login</button>
       <button onClick={register}>Register</button>
     </div>
