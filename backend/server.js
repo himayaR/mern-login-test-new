@@ -11,6 +11,12 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("DB Connected"))
   .catch(err => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("MERN backend is running successfully 🚀");
+});
+
 app.use("/api/auth", require("./routes/auth"));
 
-app.listen(5000, () => console.log("Server running"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log("Server running on port " + PORT));
